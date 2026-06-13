@@ -2,6 +2,8 @@
 
 [English](README.md) | 简体中文
 
+[![CI](https://github.com/SNWCreations/IL2CppSharp/actions/workflows/ci.yml/badge.svg)](https://github.com/SNWCreations/IL2CppSharp/actions/workflows/ci.yml)
+
 一个轻量级的 C# 库，用于与 Unity 游戏的 IL2CPP 运行时交互。它提供适合日常插件代码的 Fluent 高层 API，同时保留 `Il2CppReflection` / `Il2CppAPI` 低层入口用于直接运行时操作。
 
 ## 功能特性
@@ -179,3 +181,7 @@ Il2CppReflection.UnpinObject(handle);
 ## 许可证
 
 IL2CppSharp (C) 2026 SNWCreations, IL2CppSharp contributors. Licensed under Apache 2.0 License. See [LICENSE](LICENSE).
+
+## 发布
+
+包发布由 `Publish Package` GitHub Actions workflow 处理。它会先使用 `NUGET_TEST_API_KEY` 发布到 `https://int.nugettest.org/v3/index.json`。只有显式启用 `publish_to_nuget` 并配置 `NUGET_API_KEY` 后，才会继续发布到 NuGet.org。

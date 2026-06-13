@@ -5,12 +5,16 @@
     <AssemblyName>IL2CppSharp</AssemblyName>
     <RootNamespace>IL2CppSharp</RootNamespace>
     <PackageId>IL2CppSharp</PackageId>
-    <Version>0.1.0-alpha.1</Version>
-    <Authors>Astral Party Mod Project contributors</Authors>
+    <Version>0.1.0-alpha.2</Version>
+    <Authors>SNWCreations</Authors>
     <Description>Fluent high-level and low-level C# helpers for IL2CPP runtime access in Unity IL2CPP mods.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/SNWCreations/IL2CppSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SNWCreations/IL2CppSharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageTags>il2cpp;unity;modding;interop;reflection;native</PackageTags>
+    <Copyright>Copyright (c) 2026 SNWCreations, IL2CppSharp contributors</Copyright>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

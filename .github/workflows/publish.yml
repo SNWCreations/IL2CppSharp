@@ -1,0 +1,39 @@
+name: Publish Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_nuget:
+        description: 'Also publish to NuGet.org after int.nugettest.org succeeds'
+        required: true
+        default: false
+        type: boolean
+
+jobs:
+  publish:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore
+        run: dotnet restore IL2CppSharp.csproj
+
+      - name: Build
+        run: dotnet build IL2CppSharp.csproj --configuration Release --no-restore /p:ContinuousIntegrationBuild=true
+
+      - name: Pack
+        run: dotnet pack IL2CppSharp.csproj --configuration Release --no-build --output artifacts/package /p:ContinuousIntegrationBuild=true
+
+      - name: Publish to NuGet test environment
+        run: dotnet nuget push "artifacts/package/*.nupkg" --source "https://int.nugettest.org/v3/index.json" --api-key "${{ secrets.NUGET_TEST_API_KEY }}" --skip-duplicate
+
+      - name: Publish to NuGet.org
+        if: ${{ inputs.publish_to_nuget }}
+        run: dotnet nuget push "artifacts/package/*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "${{ secrets.NUGET_API_KEY }}" --skip-duplicate

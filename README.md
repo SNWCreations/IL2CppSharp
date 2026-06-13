@@ -2,6 +2,8 @@
 
 English | [简体中文](README.zh-CN.md)
 
+[![CI](https://github.com/SNWCreations/IL2CppSharp/actions/workflows/ci.yml/badge.svg)](https://github.com/SNWCreations/IL2CppSharp/actions/workflows/ci.yml)
+
 A lightweight C# library for interacting with the IL2CPP runtime in Unity games. It provides a fluent high-level API for daily plugin code and keeps the direct `Il2CppReflection` / `Il2CppAPI` layer available for low-level runtime work.
 
 ## Features
@@ -183,3 +185,7 @@ Il2CppReflection.UnpinObject(handle);
 ## License
 
 IL2CppSharp (C) 2026 SNWCreations, IL2CppSharp contributors. Licensed under Apache 2.0 License. See [LICENSE](LICENSE).
+
+## Publishing
+
+Package publishing is handled by the `Publish Package` GitHub Actions workflow. It always pushes to `https://int.nugettest.org/v3/index.json` first using `NUGET_TEST_API_KEY`. It only pushes to NuGet.org when `publish_to_nuget` is explicitly enabled and `NUGET_API_KEY` is configured.
