@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <!-- Core IL2CppSharp does not require local game-managed assemblies. -->
+  </PropertyGroup>
+</Project>

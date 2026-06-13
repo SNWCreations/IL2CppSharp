@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>IL2CppSharp</AssemblyName>
+    <RootNamespace>IL2CppSharp</RootNamespace>
+    <PackageId>IL2CppSharp</PackageId>
+    <Version>0.1.0-alpha.1</Version>
+    <Authors>Astral Party Mod Project contributors</Authors>
+    <Description>Fluent high-level and low-level C# helpers for IL2CPP runtime access in Unity IL2CPP mods.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" Condition="Exists('LICENSE')" />
+    <None Include="THIRD_PARTY_NOTICES.md" Pack="true" PackagePath="\" Condition="Exists('THIRD_PARTY_NOTICES.md')" />
+  </ItemGroup>
+
+</Project>
