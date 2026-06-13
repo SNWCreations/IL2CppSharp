@@ -184,4 +184,6 @@ IL2CppSharp (C) 2026 SNWCreations, IL2CppSharp contributors. Licensed under Apac
 
 ## 发布
 
-包发布由 `Publish Package` GitHub Actions workflow 处理。它会先使用 `NUGET_TEST_API_KEY` 发布到 `https://int.nugettest.org/v3/index.json`。只有显式启用 `publish_to_nuget` 并配置 `NUGET_API_KEY` 后，才会继续发布到 NuGet.org。
+包发布由 `Publish Package` GitHub Actions workflow 通过 NuGet trusted publishing 处理。它会先发布到 `https://int.nugettest.org/v3/index.json`。只有显式启用 `publish_to_nuget` 后，才会继续发布到 NuGet.org。
+
+需要为 owner `SNWCreations`、repository `IL2CppSharp`、workflow file `publish.yml` 以及 environments `nuget-test` 和 `nuget` 配置 trusted publishing policies。将 repository variable 或 secret `NUGET_USER` 设置为这些 policies 使用的 NuGet profile name。

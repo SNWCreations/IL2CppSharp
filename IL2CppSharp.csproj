@@ -5,7 +5,7 @@
     <AssemblyName>IL2CppSharp</AssemblyName>
     <RootNamespace>IL2CppSharp</RootNamespace>
     <PackageId>IL2CppSharp</PackageId>
-    <Version>0.1.0-alpha.3</Version>
+    <Version>0.1.0-alpha.4</Version>
     <Authors>SNWCreations</Authors>
     <Description>Fluent high-level and low-level C# helpers for IL2CPP runtime access in Unity IL2CPP mods.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
