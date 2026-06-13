@@ -181,9 +181,3 @@ Il2CppReflection.UnpinObject(handle);
 ## 许可证
 
 IL2CppSharp (C) 2026 SNWCreations, IL2CppSharp contributors. Licensed under Apache 2.0 License. See [LICENSE](LICENSE).
-
-## 发布
-
-包发布由 `Publish Package` GitHub Actions workflow 通过 NuGet trusted publishing 处理。它会先发布到 `https://int.nugettest.org/v3/index.json`。匹配 `v*` 的 tag push 会在测试发布成功后继续发布到 NuGet.org；手动运行只有显式启用 `publish_to_nuget` 后才会发布到 NuGet.org。
-
-需要为 owner `SNWCreations`、repository `IL2CppSharp`、workflow file `publish.yml` 以及 environments `nuget-test` 和 `nuget` 配置 trusted publishing policies。将 repository variable 或 secret `NUGET_USER` 设置为这些 policies 使用的 NuGet profile name。

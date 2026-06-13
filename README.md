@@ -185,9 +185,3 @@ Il2CppReflection.UnpinObject(handle);
 ## License
 
 IL2CppSharp (C) 2026 SNWCreations, IL2CppSharp contributors. Licensed under Apache 2.0 License. See [LICENSE](LICENSE).
-
-## Publishing
-
-Package publishing is handled by the `Publish Package` GitHub Actions workflow with NuGet trusted publishing. It always pushes to `https://int.nugettest.org/v3/index.json` first. Tag pushes matching `v*` publish to NuGet.org after the test publish succeeds; manual runs publish to NuGet.org only when `publish_to_nuget` is explicitly enabled.
-
-Configure trusted publishing policies for owner `SNWCreations`, repository `IL2CppSharp`, workflow file `publish.yml`, and environments `nuget-test` and `nuget`. Set the repository variable or secret `NUGET_USER` to the NuGet profile name used by those policies.
